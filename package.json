@@ -1,5 +1,5 @@
 {
-  "name": "rushed",
+  "name": "RUSHED",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "core-js": "^3.8.3",
+    "firebase": "^9.5.0",
+    "prettier": "^2.5.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -16,7 +19,10 @@
     "@vue/cli-plugin-babel": "~5.0.0-rc.1",
     "@vue/cli-plugin-router": "~5.0.0-rc.1",
     "@vue/cli-plugin-vuex": "~5.0.0-rc.1",
-    "@vue/cli-service": "~5.0.0-rc.1"
+    "@vue/cli-service": "~5.0.0-rc.1",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^2.2.19"
   },
   "browserslist": [
     "> 1%",
