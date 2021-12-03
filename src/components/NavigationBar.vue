@@ -1,7 +1,7 @@
 <template>
   <nav class="bg-dark py-3">
 <!--    TODO: Center align logo-->
-    <div class="flex items-center justify-between mx-auto max-w-screen-lg px-6">
+    <div class="flex items-center justify-between mx-auto w-full max-w-screen-lg px-6">
       <router-link to="/">
         <img src="@/assets/logo.png" class="h-8" />
       </router-link>
