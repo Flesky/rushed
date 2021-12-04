@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import "bootstrap-icons/font/bootstrap-icons.css";
 import './style.css'
 
 // Import the functions you need from the SDKs you need

@@ -21,9 +21,9 @@ main {
 }
 
 h1 {
-    @apply font-medium text-2xl;
+    @apply font-bold text-2xl;
 }
 
-.tag {
-    @apply rounded-sm text-sm align-middle px-1.5;
+i {
+    @apply text-3xl px-2;
 }

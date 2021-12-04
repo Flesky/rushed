@@ -24,7 +24,7 @@ module.exports = {
       danger: "#DC2626",
       white: "#FFFFFF",
       light: "#E5E7EB",
-      muted: "#9CA3AF",
+      muted: "#52525B",
       dark: "#232323",
       black: "#101101",
     },

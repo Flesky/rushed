@@ -10,11 +10,11 @@
         <router-link to="/about">About</router-link>
       </div>
       <button class="sm:hidden" @click="display = !display">
-        Menu
+        <i className="bi-list"></i>
       </button>
     </div>
     <div
-      class="grid bg-dark sm:hidden mt-4 gap-1 px-6 text-lg"
+      class="grid bg-dark sm:hidden pt-6 py-2 gap-3 px-6 text-lg"
       v-show="display"
     >
       <router-link to="/products">Products</router-link>

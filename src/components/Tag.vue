@@ -1,13 +1,7 @@
 <template>
-  <div v-if="tag == 'new'" class="tag bg-primary">NEW</div>
-  <div v-else-if="tag == 'hot'" class="tag bg-danger text-white">
-    HOT
-  </div>
-  <div
-      v-else-if="tag == 'limited'"
-      class="tag bg-warning text-black"
-  >
-    LIMITED
+  <div class="rounded-sm text-sm uppercase align-middle px-1.5"
+       :class="classes">
+    {{ tag }}
   </div>
 </template>
 
@@ -15,7 +9,16 @@
 export default {
   name: "Tag",
   props: {
-    tag: String
-  }
+    tag: String,
+  },
+  computed: {
+    classes() {
+      return {
+        new: "bg-primary",
+        hot: "bg-danger",
+        limited: "bg-warning text-black",
+      }[this.tag];
+    },
+  },
 };
 </script>

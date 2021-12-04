@@ -1,20 +1,30 @@
-// TODO: Widescreen layout
-// TODO: Add to cart
+<!--TODO: Add to cart-->
 <template>
   <NavigationBar></NavigationBar>
   <main>
-    <img :src="image" class="p-4" />
-    <h1>{{ item.name }}</h1>
-    <div class="flex justify-between items-center">
-      <div class="text-primary">₱{{ item.price }}</div>
-      <Tag :tag="item.tag"></Tag>
+    <div class="md:flex md:space-x-4">
+      <img :src="image" class="md:w-80 h-full" />
+      <div class="mt-6">
+        <div class="flex space-x-2 items-center">
+          <h1>{{ item.name }}</h1>
+          <Tag v-if="item.tag" :tag="item.tag"></Tag>
+        </div>
+        <div class="text-primary text-2xl mt-2">₱{{ price }}</div>
+        <div v-if="item.salePrice" class="flex items-center space-x-1">
+          <div class="text-muted line-through">₱{{ item.price }}</div>
+          <div>-{{ getRate() }}%</div>
+        </div>
+        <div class="flex items-center space-x-4 mt-6">
+          <button
+            class="bg-primary font-medium text-black rounded w-full md:w-max px-6 py-2"
+          >
+            Add to Cart
+          </button>
+          <i className="bi-heart"></i>
+        </div>
+        <p class="mt-6">{{ item.description }}</p>
+      </div>
     </div>
-    <button
-      class="bg-primary font-medium text-black rounded w-full px-3 py-2 mt-4"
-    >
-      Add to Cart
-    </button>
-    <p class="mt-4">{{ item.description }}</p>
   </main>
 </template>
 
@@ -49,6 +59,17 @@ export default {
         console.log("I don't exist!");
       }
     });
+  },
+  computed: {
+    price() {
+      return this.item.salePrice || this.item.price;
+    },
+  },
+  methods: {
+    getRate() {
+      const rate = 1 - this.item.salePrice / this.item.price;
+      return Math.round((rate + Number.EPSILON) * 100);
+    },
   },
 };
 </script>
