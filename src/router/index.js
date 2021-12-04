@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Products from "../views/Products.vue";
 import PageNotFound from "../views/404.vue";
 import About from "../views/About.vue";
+import Login from "../views/Login.vue";
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: "/products",
     name: "products",
     component: Products,
+  },,
+  {
+    path: "/login",
+    name: "login",
+    component: Login,
   },
   {
     path: "/products/:id",

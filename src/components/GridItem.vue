@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <div
-      class="bg-dark rounded p-3 max-w-[240px]"
+      class="bg-dark rounded p-3"
       :class="{ 'opacity-50': !item.availability }"
     >
       <img :src="image" />

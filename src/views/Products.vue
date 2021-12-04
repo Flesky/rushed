@@ -15,7 +15,7 @@
           <div>Show unavailable</div>
         </button>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 w-full">
         <GridItem
           v-for="product in filteredProducts"
           :item="product.data"

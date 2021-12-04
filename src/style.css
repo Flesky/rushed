@@ -4,7 +4,7 @@
 @tailwind utilities;
 @tailwind components;
 
-html, body {
+html, body, #app {
     @apply h-full;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 main {
-    @apply px-6 py-4 max-w-screen-lg mx-auto
+    @apply p-6 max-w-screen-lg mx-auto
 }
 
 h1 {
@@ -26,4 +26,12 @@ h1 {
 
 i {
     @apply text-3xl px-2;
+}
+
+.vertical-center-wrapper {
+    @apply flex flex-col h-full
+}
+
+.vertical-center {
+    @apply flex flex-col h-full items-center justify-center
 }

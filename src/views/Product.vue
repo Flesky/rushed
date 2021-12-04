@@ -3,8 +3,8 @@
   <NavigationBar></NavigationBar>
   <main>
     <div class="md:flex md:space-x-4">
-      <img :src="image" class="md:w-80 h-full" />
-      <div class="mt-6">
+      <img :src="image" class="mt-6 md:w-80 h-full" />
+      <div class="mt-6 md:mt-12">
         <div class="flex space-x-2 items-center">
           <h1>{{ item.name }}</h1>
           <Tag v-if="item.tag" :tag="item.tag"></Tag>
