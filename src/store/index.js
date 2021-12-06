@@ -1,14 +1,33 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    user: null,
   },
   getters: {
+    user: state => {
+      return state.user;
+    },
+    // user(state) {
+    //   return state.user;
+    // },
   },
   mutations: {
+    SET_USER(state, user) {
+      state.user = user;
+    },
   },
   actions: {
+    fetchUser({ commit }, user) {
+      if (user) {
+        commit("SET_USER", {
+          // displayName: user.displayName,
+          email: user.email,
+        });
+      } else {
+        commit("SET_USER", null);
+      }
+    },
   },
-  modules: {
-  }
-})
+  modules: {},
+});

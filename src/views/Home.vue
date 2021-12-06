@@ -1,23 +1,23 @@
 <template>
-  <div class="vertical-center-wrapper">
-    <NavigationBar></NavigationBar>
-    <main class="vertical-center max-w-md text-center">
-      <img src="@/assets/under_construction.svg">
-      <h1 class="mt-6">Coming soon</h1>
-      <div class="mt-4">
-        <p>We're currently working on our home page. Why not
-          <router-link to="/products" class="text-primary underline">check our products</router-link> for now?</p>
-      </div>
-    </main>
-  </div>
+  <StatusLayout>
+    <template v-slot:image> <img src="@/assets/under_construction.svg" /></template>
+    <template v-slot:title>Under construction</template>
+    <template v-slot:text>
+      We're currently working on our home page to better serve you. Why not
+      <router-link to="/" class="text-primary underline">check our products</router-link
+      > for now?</template
+    >
+  </StatusLayout>
 </template>
 
 <script>
-import NavigationBar from "@/components/NavigationBar";
+import NavigationBar from "@/components/Navigation";
+import StatusLayout from "@/components/templates/StatusPage";
 export default {
   name: "Home",
   components: {
-    NavigationBar
-  }
-}
+    NavigationBar,
+    StatusLayout,
+  },
+};
 </script>

@@ -3,8 +3,8 @@
   <NavigationBar></NavigationBar>
   <main>
     <div class="md:flex md:space-x-4">
-      <img :src="image" class="mt-6 md:w-80 h-full" />
-      <div class="mt-6 md:mt-12">
+      <img :src="image" class="object-contain mt-6 md:w-80 md:self-start" />
+      <div class="mt-6 md:mt-0">
         <div class="flex space-x-2 items-center">
           <h1>{{ item.name }}</h1>
           <Tag v-if="item.tag" :tag="item.tag"></Tag>
@@ -12,11 +12,11 @@
         <div class="text-primary text-2xl mt-2">₱{{ price }}</div>
         <div v-if="item.salePrice" class="flex items-center space-x-1">
           <div class="text-muted line-through">₱{{ item.price }}</div>
-          <div>-{{ getRate() }}%</div>
+          <div class="text-light">-{{ getRate() }}%</div>
         </div>
         <div class="flex items-center space-x-4 mt-6">
           <button
-            class="bg-primary font-medium text-black rounded w-full md:w-max px-6 py-2"
+            class="btn-primary md:w-max"
           >
             Add to Cart
           </button>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import NavigationBar from "@/components/NavigationBar";
+import NavigationBar from "@/components/Navigation";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import Tag from "@/components/Tag";

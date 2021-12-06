@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Products from "../views/Products.vue";
-import PageNotFound from "../views/404.vue";
+import PageNotFound from "../views/PageNotFound.vue";
 import About from "../views/About.vue";
-import Login from "../views/Login.vue";
+import Login from "../views/Login.vue"
+import Account from "../views/Account.vue";
 
 const routes = [
   {
@@ -11,11 +12,21 @@ const routes = [
     name: "home",
     component: Home,
   },
+  {path: "/home",
+  redirect: "/"},
   {
     path: "/products",
     name: "products",
     component: Products,
-  },,
+  },
+  {
+    path: "/account",
+    name: "account",
+    component: Account,
+    meta: {
+      requiresAuth: true
+    }
+  },
   {
     path: "/login",
     name: "login",
@@ -46,5 +57,18 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
+
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     if (this.$store.getters.user) {
+//       next({path: '/login'})
+//     }
+//     else {
+//       next()
+//     }
+//   } else {
+//     next()
+//   }
+// })
 
 export default router;

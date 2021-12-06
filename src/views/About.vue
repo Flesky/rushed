@@ -2,7 +2,7 @@
   <NavigationBar></NavigationBar>
   <main>
     <h1>About</h1>
-    <div class="mt-2 prose">
+    <div class="mt-2 space-y-4">
       <p>
         In partial fulfillment for <span class="text-primary underline">IT 009 - Systems Integration and Architecture
         1</span> for the <span class="text-primary underline">Information Technology</span> program.
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import NavigationBar from "@/components/NavigationBar";
+import NavigationBar from "@/components/Navigation";
 export default {
   components: { NavigationBar },
 };

@@ -1,8 +1,8 @@
 <template>
-  <div class="relative">
+  <div class="transition duration-100 hover:scale-110 relative cursor-pointer" @click="this.$router.push({name: 'product', params: {id: item.id}})">
     <div
-      class="bg-dark rounded p-3"
-      :class="{ 'opacity-50': !item.availability }"
+      class="transition bg-dark hover:bg-gray rounded p-3"
+      :class="{ 'opacity-50': !item['availability'] }"
     >
       <img :src="image" />
       <div class="font-bold mt-2">
@@ -15,7 +15,7 @@
           </div>
           <div class="text-primary">₱{{ price }}</div>
         </div>
-        <div v-if="item.salePrice" class="">-{{ getRate() }}%</div>
+        <div v-if="item.salePrice" class="text-light">-{{ getRate() }}%</div>
       </div>
     </div>
     <div

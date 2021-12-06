@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-sm text-sm uppercase align-middle px-1.5"
+  <div class="rounded-sm font-semibold text-sm uppercase align-middle px-1.5"
        :class="classes">
     {{ tag }}
   </div>
@@ -15,8 +15,8 @@ export default {
     classes() {
       return {
         new: "bg-primary",
-        hot: "bg-danger",
-        limited: "bg-warning text-black",
+        hot: "bg-red",
+        limited: "bg-yellow text-black",
       }[this.tag];
     },
   },

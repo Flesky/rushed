@@ -19,7 +19,6 @@
         <GridItem
           v-for="product in filteredProducts"
           :item="product.data"
-          @click="this.$router.push({name: 'product', params: {id: product.id}})"
         ></GridItem>
       </div>
     </div>
@@ -27,7 +26,7 @@
 </template>
 
 <script>
-import NavigationBar from "@/components/NavigationBar";
+import NavigationBar from "@/components/Navigation";
 import GridItem from "@/components/GridItem";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 

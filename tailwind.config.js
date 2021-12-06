@@ -19,12 +19,22 @@ module.exports = {
       sans: ["Inter", "sans-serif"],
     },
     colors: {
-      primary: "#22C55E",
-      warning: "#FACC15",
-      danger: "#DC2626",
+      primary: {
+        light:"#DCFCE7",
+        DEFAULT: "#22C55E",
+      },
+      yellow: {
+        light: "#FEF9C3",
+        DEFAULT: "#FACC15",
+      },
+      red: {
+        light: "#FCA5A5",
+        DEFAULT: "#DC2626",
+      },
       white: "#FFFFFF",
       light: "#E5E7EB",
       muted: "#52525B",
+      gray: "#3F3F46",
       dark: "#232323",
       black: "#101101",
     },
