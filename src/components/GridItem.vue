@@ -1,5 +1,7 @@
+<!--TODO: transfer @click here-->
+
 <template>
-  <div class="transition duration-100 hover:scale-110 relative cursor-pointer" @click="this.$router.push({name: 'product', params: {id: item.id}})">
+  <div class="transition duration-100 hover:scale-110 relative cursor-pointer">
     <div
       class="transition bg-dark hover:bg-gray rounded p-3"
       :class="{ 'opacity-50': !item['availability'] }"

@@ -19,6 +19,7 @@
         <GridItem
           v-for="product in filteredProducts"
           :item="product.data"
+          @click="this.$router.push({name: 'product', params: {id: product.id}})"
         ></GridItem>
       </div>
     </div>
