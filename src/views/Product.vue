@@ -9,7 +9,7 @@
           <h1>{{ item.name }}</h1>
           <Tag v-if="item.tag" :tag="item.tag"></Tag>
         </div>
-        <div class="text-primary text-2xl mt-2">₱{{ price }}</div>
+        <div class="text-primary text-2xl">₱{{ price }}</div>
         <div v-if="item.salePrice" class="flex items-center space-x-1">
           <div class="text-muted line-through">₱{{ item.price }}</div>
           <div class="text-light">-{{ getRate() }}%</div>

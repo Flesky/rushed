@@ -8,9 +8,6 @@ export default createStore({
     user: state => {
       return state.user;
     },
-    // user(state) {
-    //   return state.user;
-    // },
   },
   mutations: {
     SET_USER(state, user) {
@@ -18,12 +15,9 @@ export default createStore({
     },
   },
   actions: {
-    fetchUser({ commit }, user) {
+    setUser({ commit }, user) {
       if (user) {
-        commit("SET_USER", {
-          // displayName: user.displayName,
-          email: user.email,
-        });
+        commit("SET_USER", user);
       } else {
         commit("SET_USER", null);
       }

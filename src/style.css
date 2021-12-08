@@ -29,7 +29,7 @@ main {
 }
 
 h1 {
-  @apply font-bold text-2xl;
+  @apply font-bold text-2xl mb-2;
 }
 
 i {
@@ -42,4 +42,11 @@ i {
 
 .btn-red {
   @apply btn bg-red text-white;
+}
+
+input {
+  @apply bg-dark px-3 py-2 mt-2 outline-none rounded focus:ring-1 focus:ring-primary;
+}
+label {
+  @apply text-sm mt-4;
 }

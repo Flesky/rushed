@@ -20,20 +20,23 @@ module.exports = {
     },
     colors: {
       primary: {
-        light:"#DCFCE7",
+        light: "#DCFCE7",
         DEFAULT: "#22C55E",
+        dark: "#15803D",
       },
       yellow: {
         light: "#FEF9C3",
         DEFAULT: "#FACC15",
+        dark: "#CA8A04",
       },
       red: {
-        light: "#FCA5A5",
+        light: "#FECACA",
         DEFAULT: "#DC2626",
+        dark: "#991B1B",
       },
       white: "#FFFFFF",
       light: "#E5E7EB",
-      muted: "#52525B",
+      muted: "#9CA3AF",
       gray: "#3F3F46",
       dark: "#232323",
       black: "#101101",

@@ -1,35 +1,32 @@
 <template>
   <div class="flex flex-col h-full">
     <NavigationBar></NavigationBar>
-    <main class="flex flex-col justify-center w-full">
+    <main class="w-full">
+      <div class="rounded bg-red-light border-red px-3 py-2 text-red mb-4" v-if="error">{{ error }}</div>
       <div class="">
-<!--        <img class="w-40" src="@/assets/logo.png" />-->
         <h1>Login</h1>
-        <p class="mt-2">
-          Sign in to start shopping with RUSHED.
-        </p>
+        <p>Sign in to start shopping with RUSHED.</p>
       </div>
-      <form class="flex flex-col mt-4" @submit.prevent="login">
-        <input v-model="email" type="email" placeholder="Email address" />
-        <input
-          v-model="password"
-          class="mt-2.5"
-          type="password"
-          placeholder="Password"
-        />
-        <button
-          class="btn-primary mt-5"
-        >
-          Log in
-        </button>
+      <form name="login" class="flex flex-col" @submit.prevent="login">
+        <label for="email">Email address</label>
+        <input v-model="email" type="email" id="email" />
+        <label for="Password">Password</label>
+        <input v-model="password" type="password" id="password" />
+        <button class="btn-primary mt-6">Log in</button>
       </form>
+      <div class="mt-6 text-center text-muted underline">
+        <router-link to="/register">Create an account</router-link>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
 import NavigationBar from "@/components/Navigation";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 export default {
   name: "Login",
@@ -45,24 +42,13 @@ export default {
   },
   methods: {
     login() {
-      const auth = getAuth()
+      const auth = getAuth();
       signInWithEmailAndPassword(auth, this.email, this.password)
-      .then((userCredential) => {
-        this.$store.dispatch('fetchUser', userCredential.user)
-        this.$router.push('/')
-      }).catch((error) => console.log(error))
-    }
-  }
-  // watch: {
-  //   email() {
-  //     console.log(this.email)
-  //   }
-  // }
+        .then((userCredential) => {
+          this.$router.push("/");
+        })
+        .catch((error) => (this.error = error));
+    },
+  },
 };
 </script>
-
-<style scoped>
-input {
-  @apply bg-dark px-3 py-2 outline-none rounded;
-}
-</style>

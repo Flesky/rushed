@@ -4,7 +4,7 @@
     <div class="flex justify-between items-center">
       <h1>Products</h1>
     </div>
-    <div class="md:flex space-y-4 md:space-y-0 md:space-x-4 mt-2">
+    <div class="md:flex space-y-4 md:space-y-0 md:space-x-4">
       <div class="md:w-56 flex flex-col">
         <div class="">Filters</div>
         <button

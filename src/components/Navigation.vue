@@ -13,7 +13,7 @@
         <router-link to="/products">Products</router-link>
         <router-link to="/about">About</router-link>
         <div v-if="user">
-          <router-link to="/account">Account</router-link>
+          <router-link to="/account">{{ user.displayName }}</router-link>
         </div>
         <div v-else>
           <router-link to="/login">Login</router-link>
@@ -30,7 +30,7 @@
       <router-link to="/products">Products</router-link>
       <router-link to="/about">About</router-link>
       <div v-if="user">
-        <router-link to="/account">Account</router-link>
+        <router-link to="/account">{{ user.displayName }}</router-link>
       </div>
       <div v-else>
         <router-link to="/login">Login</router-link>
@@ -50,7 +50,7 @@ export default {
   computed: {
     user() {
       return this.$store.getters.user
-    }
+    },
   },
 };
 </script>

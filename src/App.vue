@@ -8,14 +8,9 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 export default {
   created() {
     const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        this.$store.dispatch("fetchUser", user);
-      } else {
-        this.$store.dispatch("fetchUser");
-      }
+    onAuthStateChanged(auth, (user) => {
+      this.$store.dispatch("setUser", user);
     });
-    unsubscribe();
   },
 };
 </script>

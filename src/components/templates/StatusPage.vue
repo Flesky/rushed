@@ -5,7 +5,7 @@
       <slot name="image"></slot>
       <h1 class="mt-6">
         <slot name="title"></slot></h1>
-      <p class="mt-6">
+      <p class="mt-4">
         <slot name="text"></slot></p>
     </main>
   </div>

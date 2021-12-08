@@ -3,7 +3,8 @@ import Home from "../views/Home.vue";
 import Products from "../views/Products.vue";
 import PageNotFound from "../views/PageNotFound.vue";
 import About from "../views/About.vue";
-import Login from "../views/Login.vue"
+import Login from "../views/Login.vue";
+import Register from "@/views/Register";
 import Account from "../views/Account.vue";
 
 const routes = [
@@ -12,8 +13,7 @@ const routes = [
     name: "home",
     component: Home,
   },
-  {path: "/home",
-  redirect: "/"},
+  { path: "/home", redirect: "/" },
   {
     path: "/products",
     name: "products",
@@ -24,13 +24,18 @@ const routes = [
     name: "account",
     component: Account,
     meta: {
-      requiresAuth: true
-    }
+      requiresAuth: true,
+    },
   },
   {
     path: "/login",
     name: "login",
     component: Login,
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: Register,
   },
   {
     path: "/products/:id",
